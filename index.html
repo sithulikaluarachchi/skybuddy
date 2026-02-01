@@ -3,52 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
     <div class="main-container">
+
+
+        <!-- Header Section -->
+
         <div class="navbar">
             <h1 class="title">Sky Buddy</h1>
-            <input type="text" placeholder="Enter a city">
+            <input type="text" placeholder="Enter a city" id="cityInput">
+            <button class="button" id="getWeather">Set up location</button>
         </div>
-        <div class="live-forecast">
-            <div class="forecast">
-                <h1 class="weather">15 &#8451;</h1>
-                <h4 class="city-country">Colombo, SriLanka</h4>
+
+
+        <!-- Card section with daily temperature -->
+
+        <div class="live-card">
+            <div class="weather">
+                <p class="temperature">15</p>
+                <p class="city">Colombo, SriLanka</p>
             </div>
             <div class="date-time">
-                <h4 class="time">08:30pm</h4>
-                <p class="date">Night , Wednsday</p>
+                <p class="time">08:30pm</p>
+                <p class="date">2026-01-29 Wednsday</p>
             </div>
         </div>
+
+        <!-- Details section -->
         <div class="details">
-            <div class="weather-details">
-                <div class="row">
-                    <div class="column">
-                        content
+            <div class="details-grid">
+                <div class="grid-item">
+                    <div class="column1">
+                       <i class="fa-solid fa-droplet"></i>
                     </div>
-                    <div class="column">
-                        content
-                    </div>
-                </div>
-                <div class="row">
-                     <div class="column">
-                        content
-                    </div>
-                    <div class="column">
-                        content
+                    <div class="row">
+                        <p class="weather-parameter"> Sunrise</p>
+                        <p class="value" id="sunrise"></p>
                     </div>
                 </div>
+                <div class="grid-item">
+                    <div>
+                       <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div class="row">
+                        <p class="weather-parameter">Humidity</p>
+                        <p class="value" id="humidity"></p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div>
+                       <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div class="row">
+                        <p class="weather-parameter">Sunset</p>
+                        <p class="value" id="sunset"></p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div>
+                       <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div class="row">
+                        <p class="weather-parameter">Wind</p>
+                        <p class="value" id="wind"></p>
+                    </div>
+                </div>
+             
+                    
             </div>
             <div class="weekly-predictions">
-                    <div class="card">Mon</div>
-                    <div class="card">Tue</div>
-                    <div class="card">Wed</div>
-                    <div class="card">Thu</div>
-                    <div class="card">Fri</div>
-                    <div class="card">Sat</div>
-                    <div class="card">Sun</div>
+                    <div class="card">
+                        <p class="day">Mon</p>
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="temp"></p>
+                    </div>
+                     <div class="card">
+                        <p class="day">Tue</p>
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="temp"></p>
+                    </div>
+                     <div class="card">
+                        <p class="day">Wed</p>
+                        <i class="fa-solid fa-droplet"></i>
+                        <p  class="temp"></p>
+                    </div>
+                     <div class="card">
+                        <p class="day">Thu</p>
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="temp">15 &#8451;</p>
+                    </div>
+                     <div class="card">
+                        <p class="day">Fri</p>
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="temp">15 &#8451;</p>
+                    </div>
+                     <div class="card">
+                        <p class="day">Sat</p>
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="temp">15 &#8451;</p>
+                    </div>
+                     <div class="card">
+                        <p class="day">Sun</p>
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="temp"></p>
+                    </div>
 
             </div>
         </div>
@@ -56,5 +120,7 @@
         </div>
         
     </div>
+    <script src="https://kit.fontawesome.com/4f92095a34.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
