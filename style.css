@@ -76,7 +76,7 @@ input{
     font-size: 5rem;
 }
 
-.city{
+.region{
     font-family: 'Poppin',sans-serif;
     font-size: 1.6rem;
     font-weight: 500;
@@ -99,6 +99,11 @@ input{
 .date{
     font-family: 'Poppin',sans-serif;
     font-size: 1.6rem;
+}
+
+.weekday{
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 /* more details section */
