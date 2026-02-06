@@ -18,7 +18,7 @@
         <div class="navbar">
             <h1 class="title">Sky Buddy</h1>
             <input type="text" placeholder="Enter a city" id="cityInput">
-            <button class="button">Set up location</button>
+            <button class="button">Get weather</button>
         </div>
 
 
@@ -26,6 +26,7 @@
 
         <div class="live-card">
             <div class="weather">
+                <img src="" alt="" class="weather-icon">
                 <p class="temperature">15</p>
                 <p class="region">Colombo, SriLanka</p>
             </div>
@@ -39,8 +40,8 @@
         <div class="details">
             <div class="details-grid">
                 <div class="grid-item">
-                    <div class="column1">
-                       <i class="fa-solid fa-droplet"></i>
+                    <div class="icon">
+                       <i data-feather="sunrise" class="icons"></i>
                     </div>
                     <div class="row">
                         <p class="weather-parameter"> Sunrise</p>
@@ -48,7 +49,7 @@
                     </div>
                 </div>
                 <div class="grid-item">
-                    <div>
+                    <div class="icon">
                        <i class="fa-solid fa-droplet"></i>
                     </div>
                     <div class="row">
@@ -57,8 +58,8 @@
                     </div>
                 </div>
                 <div class="grid-item">
-                    <div>
-                       <i class="fa-solid fa-droplet"></i>
+                    <div class="icon">
+                       <i data-feather="sunset" class="icons"></i>
                     </div>
                     <div class="row">
                         <p class="weather-parameter">Sunset</p>
@@ -66,8 +67,8 @@
                     </div>
                 </div>
                 <div class="grid-item">
-                    <div>
-                       <i class="fa-solid fa-droplet"></i>
+                    <div class="icon">
+                       <i class="fa-solid fa-wind"></i>
                     </div>
                     <div class="row">
                         <p class="weather-parameter">Wind</p>
@@ -81,43 +82,43 @@
                     <div class="card">
                         <p class="week-date">Mon</p>
                         <p class="day"></p>
-                        <img src="" alt="" id="image"/>
+                        <img src="" alt="" class="image"/>
                         <p class="wtemp"></p>
                     </div>
                      <div class="card">
                         <p class="week-date">Tue</p>
                         <p class="day"></p>
-                        <img src="" alt="" id="image"/>
+                        <img src="" alt="" class="image"/>
                         <p class="wtemp"></p>
                     </div>
                      <div class="card">
                         <p class="week-date">Wed</p>
                         <p class="day"></p>
-                        <img src="" alt="" id="image"/>
+                        <img src="" alt="" class="image"/>
                         <p  class="wtemp"></p>
                     </div>
                      <div class="card">
                         <p class="week-date">Thu</p>
                         <p class="day"></p>
-                        <img src="" alt="" id="image"/>
+                        <img src="" alt="" class="image"/>
                         <p class="wtemp"></p>
                     </div>
                      <div class="card">
                         <p class="week-date">Fri</p>
                         <p class="day"></p>
-                        <img src="" alt="" id="image"/>
+                        <img src="" alt="" class="image"/>
                         <p class="wtemp"></p>
                     </div>
                      <div class="card">  
                         <p class="week-date">Sat</p>
                         <p class="day"></p>
-                        <img src="" alt="" id="image"/>
+                        <img src="" alt="" class="image"/>
                         <p class="wtemp"></p>
                     </div>
                      <div class="card">
                         <p class="week-date">Sun</p>
                         <p class="day"></p>
-                        <img src="" alt="" id="image"/>
+                        <img src="" alt="" class="image"/>
                         <p class="wtemp"></p>
                     </div>
 
@@ -128,6 +129,7 @@
         
     </div>
     <script src="https://kit.fontawesome.com/4f92095a34.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
     <script src="./script.js"></script>
 </body>
 </html>

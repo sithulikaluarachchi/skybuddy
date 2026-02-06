@@ -1,6 +1,7 @@
 const input = document.querySelector('#cityInput');
 const save = document.querySelector('.button');
 
+const weatherIcon = document.querySelector('.weather-icon')
 const temp = document.querySelector('.temperature');
 const region = document.querySelector('.region');
 const time = document.querySelector('.time');
@@ -14,13 +15,14 @@ const wind = document.querySelector('#wind');
 
 const weekday = document.querySelectorAll('.week-date');
 const day = document.querySelectorAll('.day')
-const img = document.querySelectorAll('#image')
+const img = document.querySelectorAll('.image')
 const weeklytemp = document.querySelectorAll('.wtemp')
 
-const API_KEY = "e34899befc4a4a469c571150260102";
+const API_KEY = "API-KEY";
 let clockInterval = null;
 let currentDateTime = null;
 
+//input city
 function cityInput() {
     if(input.value !== ''){
         localStorage.setItem('city', input.value.trim());
@@ -31,6 +33,13 @@ function cityInput() {
         console.log('Enter another city.')
     }
 
+}
+
+//key shortcut
+function enterKeyInput(e){
+    if(e.key === 'Enter'){
+        cityInput();
+    }
 }
 
 async function getWeather(){
@@ -59,6 +68,13 @@ async function getWeather(){
 function getTodayForecast(data){
 
     //Live card values
+
+    //weather icon
+    const icon = data.current.condition.icon;
+    const imgUrl = `https:${icon}`;
+    const altText = data.current.condition.text;
+    weatherIcon.src = imgUrl;
+    weatherIcon.alt = altText;
 
     //temperature
     const tempVal = data.current.temp_c;
@@ -111,7 +127,7 @@ function getWeekForecast(data){
         const weekDate = new Date(`${date}T12:00:00`);
         console.log(` day ${index} ${weekdate}`);
         const currentWeekDay = weekDate.toLocaleDateString("en-US", {
-            weekday: "long"
+            weekday: "short"
             });
         console.log(currentWeekDay);
         weekdate.textContent = currentWeekDay;
@@ -143,6 +159,7 @@ function getWeekForecast(data){
     
 }
 
+//clock time runs
 function clockTime(apiTime){
     if(clockInterval){
         clearInterval(clockInterval);
@@ -157,6 +174,7 @@ function clockTime(apiTime){
     }, 1000);
 }
 
+//updating the ui time
 function updateui(){
     const currentTime = currentDateTime.toLocaleTimeString("en-US",{
          hour: "2-digit",
@@ -177,3 +195,7 @@ function updateui(){
 
 save.addEventListener('click',cityInput);
 getWeather();
+
+window.addEventListener('keydown',enterKeyInput);
+
+feather.replace();
