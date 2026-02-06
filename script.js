@@ -18,7 +18,7 @@ const day = document.querySelectorAll('.day')
 const img = document.querySelectorAll('.image')
 const weeklytemp = document.querySelectorAll('.wtemp')
 
-const API_KEY = "API-KEY";
+const API_KEY = "API_KEY";
 let clockInterval = null;
 let currentDateTime = null;
 
