@@ -18,7 +18,6 @@ const day = document.querySelectorAll('.day')
 const img = document.querySelectorAll('.image')
 const weeklytemp = document.querySelectorAll('.wtemp')
 
-// Removed API_KEY from frontend — now using backend proxy
 let clockInterval = null;
 let currentDateTime = null;
 
