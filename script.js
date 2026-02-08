@@ -1,3 +1,4 @@
+// query selectors
 const input = document.querySelector('#cityInput');
 const save = document.querySelector('.button');
 
@@ -25,7 +26,6 @@ let currentDateTime = null;
 function cityInput() {
     if(input.value !== ''){
         localStorage.setItem('city', input.value.trim());
-        console.log(localStorage.getItem('city'));
         getWeather();
     }
     else{
@@ -55,7 +55,7 @@ async function getWeather(){
 
         const data = await res.json();
 
-        // Send data to your existing functions
+        // Send data to getTodayForecast and getWeekForecast functions
         getTodayForecast(data);
         getWeekForecast(data);
 
@@ -77,17 +77,14 @@ function getTodayForecast(data){
 
     //temperature
     const tempVal = data.current.temp_c;
-    console.log(`temperature:- ${tempVal}`);
     temp.innerHTML = `<p id="temp">${tempVal} &#8451;</p>`;
 
     //region
-    const area = `${data.location.name}/${data.location.country}`
-    console.log(`region:- ${area}`);
+    const area = `${data.location.name}/${data.location.country}`;
     region.textContent = `${area}`;
 
     //time and date
     const localLtime = data.location.localtime;
-    console.log(`time:- ${localLtime}`);
     clockTime(localLtime);
 
 
@@ -95,47 +92,39 @@ function getTodayForecast(data){
 
     //sunrise time
     const sunriseTime = data.forecast.forecastday[0].astro.sunrise;
-    console.log(`sunrise time:- ${sunriseTime}`);
     sunrise.textContent = `${sunriseTime}`;
 
     //sunrset time
     const sunsetTime = data.forecast.forecastday[0].astro.sunset;
-    console.log(`sunset time:- ${sunsetTime}`)
     sunset.textContent = `${sunsetTime}`;
 
     //humidity
     const humidityVal = data.current.humidity;
-    console.log(`humidity:- ${humidityVal}`);
-     humidity.textContent = `${humidityVal}`;
+     humidity.textContent = `${humidityVal} %`;
 
     //wind
-    const windVal = data.current.wind_degree;
-    console.log(`wind:- ${windVal}`);
-    wind.textContent = `${windVal}`;
+    const windVal = data.current.wind_kph;
+    wind.textContent = `${windVal} km/h`;
 
 
            
 }
 
 function getWeekForecast(data){
-    console.log(data)
 
     //weekday names of the upcoming week from tomorrow
     weekday.forEach((weekdate , index) => {
         const date = data.forecast.forecastday[index + 1].date;
         const weekDate = new Date(`${date}T12:00:00`);
-        console.log(` day ${index} ${weekdate}`);
         const currentWeekDay = weekDate.toLocaleDateString("en-US", {
             weekday: "short"
             });
-        console.log(currentWeekDay);
         weekdate.textContent = currentWeekDay;
     });
 
     //dates of the upcoming week
     day.forEach((date , index) => {
         const predictDate =data.forecast.forecastday[index + 1].date;
-        console.log(predictDate);
         date.textContent = predictDate;
     });
 
@@ -151,7 +140,6 @@ function getWeekForecast(data){
     //temperature value in ℃ of the following week
     weeklytemp.forEach((temp , index) => {
         const predicttemp = data.forecast.forecastday[index + 1].day.avgtemp_c;
-        console.log(predicttemp);
         temp.innerHTML = `<p id="weektemp">${predicttemp} &#8451;</p>`;
     })
 
