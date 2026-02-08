@@ -47,7 +47,7 @@ async function getWeather(){
 
     try {
         // Fetching all weather data (today + 7 days) from backend proxy
-        const res = await fetch(`http://localhost:5000/weather?city=${city}`);
+        const res = await fetch(`https://skybuddy-backend-proxy-production.up.railway.app/weather?city=${city}`);
 
         if (!res.ok) {
             throw new Error("Failed to fetch weather data");
