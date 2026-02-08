@@ -18,7 +18,7 @@ const day = document.querySelectorAll('.day')
 const img = document.querySelectorAll('.image')
 const weeklytemp = document.querySelectorAll('.wtemp')
 
-const API_KEY = "API-KEY";
+// Removed API_KEY from frontend — now using backend proxy
 let clockInterval = null;
 let currentDateTime = null;
 
@@ -44,24 +44,24 @@ function enterKeyInput(e){
 
 async function getWeather(){
     const city = localStorage.getItem('city'); 
+    if (!city) return;
+
     try {
+        // Fetching all weather data (today + 7 days) from backend proxy
+        const res = await fetch(`http://localhost:5000/weather?city=${city}`);
 
-        // Fetching data for the today forecast
-        const currentRes =  await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&aqi=no`);
-        const currentData = await currentRes.json();
-        console.log(currentData);
-        getTodayForecast(currentData);
+        if (!res.ok) {
+            throw new Error("Failed to fetch weather data");
+        }
 
-        //Fetching data for the coming week forecast from tomorrow
-        const forecastRes =  await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=8&aqi=no&alerts=no`);
-        const forecastData = await forecastRes.json();
-        console.log(forecastData);
-        getWeekForecast(forecastData)
+        const data = await res.json();
 
+        // Send data to your existing functions
+        getTodayForecast(data);
+        getWeekForecast(data);
 
-        
     } catch (error) {
-        
+        console.error("Weather fetch error:", error);
     }
 }
 
