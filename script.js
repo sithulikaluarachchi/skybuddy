@@ -29,7 +29,7 @@ function cityInput() {
         getWeather();
     }
     else{
-        console.log('Enter another city.')
+        alert('Enter another city.');
     }
 
 }
