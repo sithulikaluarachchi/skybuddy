@@ -23,7 +23,7 @@ SkyBuddy is a responsive weather dashboard built with **Vanilla HTML, CSS, and J
   Users can enter a city name, and the dashboard fetches data from the **Weather API**. The current temperature (°C), today’s date, weekday, and real-time clock are displayed and updated every second.
 
 - **Forecast Data Display**  
-  The API provides 8-day weather forecasts. The dashboard displays the weather for today and the next 7 days in cards, including weekday, date, weather condition icon, and temperature.
+  The API provides 3-day weather forecasts. The dashboard displays the weather for today and the next 2 days in cards, including weekday, date, weather condition icon, and temperature.
 
 - **Additional Weather Metrics**  
   Displays today’s sunrise time, sunset time, humidity (%), and wind speed (km/h).
@@ -95,4 +95,4 @@ git clone https://github.com/sithulikaluarachchi/skybuddy.git
 
 **Live** :- https://skybuddy-neon.vercel.app 
 
-<img src="./assets/demo.png" alt="Task Management App Demo" width="400px"/>
+<img src="./assets/demo.png" alt="SkyBuddy Demo" width="400px"/>
