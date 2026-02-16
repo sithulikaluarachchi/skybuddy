@@ -17,7 +17,7 @@ SkyBuddy is a responsive weather dashboard built with **Vanilla HTML, CSS, and J
 
 ## 🧩 SkyBuddy Features
 
-### Functional Features
+### 🛠️ Functional Features
 
 - **Current Weather Display**  
   Users can enter a city name, and the dashboard fetches data from the **Weather API**. The current temperature (°C), today’s date, weekday, and real-time clock are displayed and updated every second.
@@ -34,7 +34,7 @@ SkyBuddy is a responsive weather dashboard built with **Vanilla HTML, CSS, and J
 - **Keyboard Shortcuts**  
   Pressing **Enter** after typing a city name triggers the search automatically.
 
-### UI Features
+### 📱💻 UI Features
 
 - **Dark Theme Dashboard**  
   SkyBuddy uses a dark theme with a carefully selected weather-themed color palette. The design includes rounded cards, soft shadows, balanced spacing, and modern typography.
